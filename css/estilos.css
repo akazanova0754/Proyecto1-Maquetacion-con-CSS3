@@ -109,29 +109,40 @@ button:active{
 /* ESTILOS CABECERA */
 #header{
     width: 100%;
-    min-width: 1024px;
+    max-width: 1250px;
+    margin: 0 auto;
+    width: 100%;
     height: 250px;
     text-align: center;
 }
 #logotipo{
-    width: 770px;
-    margin: auto;
+    width: 100%;
+    height: 160px;
     padding-top: 20px;
+    margin: auto;
+    box-sizing: border-box;
+    
 }
 #header #logotipo img{
     width: 140px;
+    height: 140px;
 }
 #header h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
     font-family: "nevis";
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-top: 10px;
     text-shadow: 0px 2px 1px #333;
     transition: all 300ms;
+    box-sizing: border-box;   
 }
 #header h1:hover{
     text-shadow: 0 2px 1px #333,
-                 0 0 4px #70b231;
+                0 0 4px #70b231;
 
 }
 #header h1 a{
@@ -140,31 +151,44 @@ button:active{
 }
 
 /* BARRA DE NAVEGACION */
-
 #menu{
     width: 100%;
-    height: 40px;
-    background-color: #333;
-    box-shadow: 0 0 2px gray;
+    max-width: 1250px;
+    margin: 0 auto;
 }
 #menu ul{
-    width: 930px; height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* width: 930px;  */
+    /* height: 40px; */
     margin: 0px auto;
+    background-color: #333;
+    box-shadow: 0 0 2px gray;
+    box-sizing: border-box;
 }
 #menu > ul > li{
-    display: inline;
-    line-height: 40px;
-    float: left;
+    display: flex;
+    align-content: center;
+    justify-content: center;
     transition: all 300ms;
+    position: relative;
+    box-sizing: border-box;
 }
 #menu > ul > li a{
-    display: block;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     text-decoration: none;
     color:white;
     font-size: 14px;
     font-family: sans-serif;
     padding: 0px 15px;
     border-right: 1px solid gray;
+    
 }
 #menu > ul > li:first-child a{
     border-left: 1px solid gray;
@@ -173,22 +197,26 @@ button:active{
     background-color: #70b231;
     box-shadow: 0 0 4px green inset;
 }
+/*SUB MENU*/
 #menu > ul > li > ul{
     display: none;
+    flex-direction: column;
     position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 100%;
 }
-#menu > ul > li > ul > li a{
+#menu > ul > li > ul > li > a{
     color: white;
-    text-align: left;
-    font-size: 13px;
-    padding-left: 25px;
+    font-size: 12px;
     width: 160px;
-    z-index: 1;
+    height: 40px;
+    z-index: 100;
     background: #333;
     border-bottom: 1px solid #D6D6D6;
 }
 #menu > ul > li:hover > ul{
-    display: block;
+    display: flex;
 }
 #menu > ul > li > ul >li:hover a{
     color: #70b231;
@@ -196,22 +224,27 @@ button:active{
 }
 /* CONTENIDO */
 #content{
-    width: 1250px;
+    max-width: 1250px;
     min-height: 1100px;
     margin: 0px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+    position: relative;
 }
-
 /* BARRA LATERAL */
 #aside{
     float: left;
+    width: calc(30% - 15px);
 }
 #aside,#frase{
-    width: 200px;
+    min-width: 200px;
+    box-sizing: border-box;
     background: white;
-    margin: 30px;
+    margin: 30px 0px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 2px #ccc;
     font-family: sans-serif;
+    position: relative;
 }
 #aside .widget{
     display: block;
@@ -240,11 +273,12 @@ button:active{
 #aside div:nth-child(3) h3{
     color: #A3403E;
 }
+
 /* FRASE DEL DIA */
 #frase{
     position: absolute;
-    top: 1090px;
-    box-sizing: border-box;
+    width: calc(30% - 24px);
+    top: calc(50% - 10px);
     font-size: 13px;
     padding: 10px;
 }
@@ -279,12 +313,12 @@ button:active{
 #aside div ul{
     list-style: square;
 }
-
 /* SECCIONES */
-
 #sections{
+    position: relative;
     float: right;
-    width: 70%;
+    width: calc(70% - 15px);
+    box-sizing: border-box;
     font-family: sans-serif, arial, helvetica;
 }
 #sections .titulo{
@@ -327,18 +361,24 @@ button:active{
     margin-top: -38px;
 }
 #sections .two{
-    margin-left: 800px;
+    right: 0;
+    margin-right: 20px;
 }
 /* Historial */
 #historial{
-    float: right;
+    position: absolute;
+    right: 0;
+    height: 10px;
+    top:calc(100% - 10px);
     margin: 20px;
+    width: 170px;
 }
-
 /* FOOTER */
-
 #footer{
     width: 100%;
+    min-width: 250px;
+    max-width: 1350px;
+    margin: 0 auto;
     text-align: center;
     margin-top: 40px;
     background-color: #333;
@@ -346,4 +386,264 @@ button:active{
     color: white;
     font-family: sans-serif;
     font-size: 14px;
+}
+@media screen and (max-width: 1024px){
+    /* ESTILOS CABECERA */
+    #header{
+        height: 300px;
+    }
+    #header h1{
+        height: 100px;
+        font-size: 24px; 
+        margin-top: 0px;    
+    }
+    #logotipo{
+        height: 200px;
+    }
+    #header #logotipo img{
+        width: 180px;
+        height: 180px;
+    }
+    /* BARRA DE NAVEGACION */
+    #menu{
+        min-width: 250px;
+        /* max-width: 450px; */
+        margin-bottom: 20px
+    }
+    #menu > ul{
+        width: 90%;
+        min-width: 640px;
+        box-shadow: 0 0 2px gray,
+                inset 0 0 5px gray;
+        flex-wrap: nowrap;
+    }
+    #menu > ul > li{
+        width: 100%;
+        box-shadow: 0 -2px 2px gray;
+        flex-direction: column;
+    }
+    #menu > ul > li a{
+        border-right: none;
+        padding: 0px 5px;
+        font-size: 10px;
+    }
+    #menu > ul > li:first-child a{
+        border-left: none;
+    }
+    /*SUBMENU*/
+    #menu > ul > li > ul{
+        width: 100%;
+        box-sizing: border-box; 
+    }
+    #menu > ul > li > ul > li > a{
+        font-size: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        background: #1D1E22;
+    }
+    /* CONTENIDO */
+    #content{
+        min-width: 250px;
+    }
+    /* BARRA LATERAL */
+    #aside{
+        float: none;
+        clear: both;
+        margin-top: 120px;
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        max-width: 300px;
+    }
+    /* FRASE DEL DIA */
+    #frase{
+        width: 300px;
+        box-sizing: border-box;
+        top:-110px;
+        left: calc(50% - 150px);
+        height: 100px;
+        margin: 0;
+    }
+    /*SECCIONES*/
+    #sections{
+        float: none;
+        clear: both;
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    /* Historial */
+    #historial{
+        right: calc(50% - calc(700px / 2));
+    }
+}    
+@media screen and (max-width: 640px){
+    /* ESTILOS CABECERA */
+    #header{
+        min-width: 300px;
+        height: 300px;
+    }
+    #header h1{
+        height: 100px;
+        font-size: 20px; 
+        margin-top: 0px;    
+    }
+    #logotipo{
+        height: 200px;
+    }
+    #header #logotipo img{
+        width: 180px;
+        height: 180px;
+    }
+    /* BARRA DE NAVEGACION */
+    #menu{
+        min-width: 250px;
+        max-width: 450px;
+        margin-bottom: 20px;
+    }
+    #menu ul{
+        width: 80%;
+        min-width: 200px;
+        box-shadow: 0 0 2px gray,
+                inset 0 0 5px gray;
+        flex-direction: column;
+    }
+    #menu > ul > li{
+        width: 100%;
+        box-shadow: 0 -2px 2px gray;
+        flex-direction: column;
+    }
+    #menu > ul > li a{
+        border-right: none;
+        height: 60px;
+        font-size: 20px;
+    }
+    #menu > ul > li:first-child{
+        box-shadow: none;
+    }
+    #menu > ul > li:first-child a{
+        border-left: none;
+    }
+    /*SUBMENU*/
+    #menu > ul > li > ul{
+        position: relative;
+        width: 100%;
+        box-sizing: border-box; 
+    }
+    #menu > ul > li > ul > li > a{
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        background: #1D1E22;
+    }
+    /* CONTENIDO */
+    #content{
+        min-width: 250px;
+    }
+    /* BARRA LATERAL */
+    #aside{
+        float: none;
+        clear: both;
+        margin-top: 120px;
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        max-width: 300px;
+    }
+    /* FRASE DEL DIA */
+    #frase{
+        width: calc(70% - 20px);
+        box-sizing: border-box;
+        top:-110px;
+        left: calc(50% - calc(calc(70% - 20px) / 2));
+        height: 100px;
+        margin: 0;
+    }
+    /*SECCIONES*/
+    #sections{
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width: 360px){
+    /* ESTILOS CABECERA */
+    #header{
+        min-width: 250px;
+    }
+    #header h1{
+        height: 80px;
+        font-size: 16px; 
+        margin-top: 0px;    
+    }
+    /* BARRA DE NAVEGACION */
+    #menu{
+        min-width: 250px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    #menu ul{
+        width: 80%;
+        min-width: 200px;
+        box-shadow: 0 0 2px gray,
+                inset 0 0 5px gray;
+        flex-direction: column;
+    }
+    #menu > ul > li{
+        width: 100%;
+        box-shadow: 0 -2px 2px gray;
+        flex-direction: column;
+    }
+    #menu > ul > li a{
+        border-right: none;
+        height: 60px;
+        font-size: 20px;
+    }
+    #menu > ul > li:first-child{
+        box-shadow: none;
+    }
+    #menu > ul > li:first-child a{
+        border-left: none;
+    }
+    /*SUBMENU*/
+    #menu > ul > li > ul{
+        position: relative;
+        width: 100%;
+        box-sizing: border-box; 
+    }
+    #menu > ul > li > ul > li > a{
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        background: #1D1E22;
+    }
+    /* CONTENIDO */
+    #content{
+        min-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* BARRA LATERAL */
+    #aside{
+        float: none;
+        clear: both;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 120px;
+        width: 100%;
+    }
+    /* FRASE DEL DIA */
+    #frase{
+        margin: 0px;
+        width: calc(100% - 30px);
+        box-sizing: border-box;
+        top:-110px;
+        left: calc(50% - calc(calc(100% - 30px) / 2));
+        height: 100px;
+    }
+    /*SECCIONES*/
+    #sections{
+        width: 100%;
+    }
 }
