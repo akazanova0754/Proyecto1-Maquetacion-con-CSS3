@@ -565,7 +565,9 @@ button:active{
     #sections{
         width: 100%;
     }
-    
+    #historial{
+        right: 0;
+    }
 }
 @media screen and (max-width: 360px){
     /* ESTILOS CABECERA */
@@ -648,4 +650,8 @@ button:active{
     #sections{
         width: 100%;
     }
+    /*HISTORIAL*/
+    #historial{
+        left: 0;
+    }    
 }
