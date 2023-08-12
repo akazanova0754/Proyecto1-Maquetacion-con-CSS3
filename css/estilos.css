@@ -653,6 +653,10 @@ button:active{
     #sections{
         width: 100%;
     }
+    /* FOOTER */
+    #footer{
+        margin-top: 50px;  
+    }
     /*HISTORIAL*/
     #historial{
         right: calc(50% - 95px);
