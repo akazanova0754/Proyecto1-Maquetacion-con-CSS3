@@ -369,8 +369,8 @@ button:active{
     position: absolute;
     right: 0;
     height: 10px;
-    top:calc(100% - 10px);
-    margin: 20px;
+    top:calc(100% + 10px);
+    margin: 0 20px;
     width: 190px;
 }
 /* FOOTER */
@@ -475,7 +475,8 @@ button:active{
     }
     /* Historial */
     #historial{
-        right: calc(50% - calc(700px / 2));
+        /* right: calc(50% - calc(700px / 2)); */
+        right: 0;
     }
 }    
 @media screen and (max-width: 640px){
