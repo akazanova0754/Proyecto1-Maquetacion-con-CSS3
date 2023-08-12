@@ -655,7 +655,8 @@ button:active{
     }
     /*HISTORIAL*/
     #historial{
-        right: calc(50% - 115px);
+        right: calc(50% - 95px);
+        margin: 0;
         /* left: 0; */
     }     
 }
